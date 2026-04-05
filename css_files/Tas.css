@@ -1,0 +1,51 @@
+body {
+    font-family: "Khmer OS Battambang", sans-serif;
+    background: linear-gradient(135deg, #ffffff, #4e63c9);
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #eee;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #9d9d9d;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #6c7ae0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #071f95;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #d4edda;
+}
+
+.error {
+    background: #d72332;
+    color: #721c24;
+}

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<title>Electricity Bill Calculator</title>
+<link rel="stylesheet" href="../css_files/elt.css">
+</head>
+
+<body>
+
+<div class="box">
+<h2>Electricity Bill Calculator</h2>
+    <input type="number" id="old" placeholder="Old Number">
+    <input type="number" id="new" placeholder="New Number">
+    <button onclick="calculate()">Calculate</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+function calculate(){
+
+    let oldMeter = document.getElementById("old").value;
+    let newMeter = document.getElementById("new").value;
+
+    let used = newMeter - oldMeter;
+    
+    let price = 720; 
+    let total = used * price;
+
+document.getElementById("result").innerHTML =
+"Units Used = " + used + " /Kwh <br> Rate per Unit = " + total + " Real";
+
+}
+</script>
+
+</body>
+</html>

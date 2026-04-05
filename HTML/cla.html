@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate loan amount</title>
+    <link rel="stylesheet" href="../css_files/cla.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>គណនាកម្ចីប្រាក់</h2>
+
+    <input type="number" id="amount" placeholder="ចំនួនកម្ចី ($)">
+    <input type="number" id="interest" placeholder="អត្រាការប្រាក់ (%)">
+    <input type="number" id="years" placeholder="រយៈពេល (ឆ្នាំ)">
+
+    <button onclick="calculate()">គណនា</button>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>ល.រ</th>
+                <th>កាលបរិច្ឆេទ</th>
+                <th>ប្រាក់កម្ចី</th>
+                <th>ការប្រាក់</th>
+                <th>បង់ប្រចាំខែ</th>
+                <th>ប្រាក់ដើម</th>
+                <th>កម្ចីនៅសល់</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="total" id="totalInterest"></div>
+</div>
+
+<script>
+function calculate() {
+    let amount = parseFloat(document.getElementById("amount").value);
+    let interest = parseFloat(document.getElementById("interest").value);
+    let years = parseFloat(document.getElementById("years").value);
+
+    let monthlyRate = interest / 100 / 12;
+    let months = years * 12;
+
+    let monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
+
+    let balance = amount;
+    let tableBody = document.querySelector("#table tbody");
+    tableBody.innerHTML = "";
+
+    let totalInterest = 0;
+    let date = new Date();
+
+    for (let i = 1; i <= months; i++) {
+        let interestPayment = balance * monthlyRate;
+        let principalPayment = monthlyPayment - interestPayment;
+        let remaining = balance - principalPayment;
+
+        totalInterest += interestPayment;
+
+        let row = `
+        <tr>
+            <td>${i}</td>
+            <td>${date.toISOString().split('T')[0]}</td>
+            <td>$${balance.toFixed(2)}</td>
+            <td>$${interestPayment.toFixed(2)}</td>
+            <td>$${monthlyPayment.toFixed(2)}</td>
+            <td>$${principalPayment.toFixed(2)}</td>
+            <td>$${remaining < 0 ? "0.00" : remaining.toFixed(2)}</td>
+        </tr>
+        `;
+
+        tableBody.innerHTML += row;
+
+        balance = remaining;
+        date.setMonth(date.getMonth() + 1);
+    }
+
+    document.getElementById("totalInterest").innerText =
+        "សរុបការប្រាក់សរុប: $" + totalInterest.toFixed(2);
+}
+</script>
+
+</body>
+</html>

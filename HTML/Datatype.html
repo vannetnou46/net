@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Types</title>
+    <link rel="stylesheet" href="../css_files/Datatype.css">
+</head>
+<body>
+
+<section class="container">
+
+    <!-- LEFT BOTTOM BOX 1-->
+    <div class="right-bottom">
+        <h1> សេចក្តីផ្តើមអំពី <br> Data Types.</h1>
+        <p>
+            Data Types ឬ ប្រភេទទិន្នន័យ គឺជាការកំណត់ថាតើអថេរ
+            (Variable) មួយអាចផ្ទុកទិន្នន័យប្រភេទណាខ្លះ។ 
+            ក្នុងភាសា PHP យើងមិនចាំបាច់ប្រកាសប្រភេទអថេរទេ 
+            ព្រោះ PHP គឺជា Dynamic Typed Language ដែលមាន
+            ន័យថាប្រភេទទិន្នន័យនឹងត្រូវបានកំណត់ដោយស្វ័យប្រវត្តិ
+            តាមតម្លៃដែលផ្តល់ឲ្យ។
+        </p>
+    </div> 
+
+    <!-- RIGHT TOP BOX -->
+    <div class="box blue">
+        <ul>
+            <li>PHP គាំទ្រប្រភេទទិន្នន័យចំនួន ៨ ប្រភេទ,</li>
+            <li>ប្រភេទទិន្នន័យត្រូវបានកំណត់ដោយស្វ័យប្រវត្តិ (Dynamic Typing),</li>
+            <li>អាចប្រើ function var_dump() ដើម្បីពិនិត្យប្រភេទ និងតម្លៃរបស់អថេរ,</li>
+        </ul>
+    </div>
+
+    <!-- LEFT BOTTOM BOX 2-->
+    <div class="box green">
+        <ul>
+            <li><.?php <br>// Integer Types</li>
+            $age = 25; // Decimal (ទសភាគ) <br>
+            $binary = 0b1010; // Binary (គោលពីរ) = 10 <br>
+            $octal = 0123; // Octal (គោលប្រាំបី) = 83 <br>
+            $hexadecimal = 0x1A; // Hexadecimal (គោលដប់ប្រាំមួយ) = 26 <br>
+
+            echo "Age: $age"; <br>
+            echo "Binary 0b1010 = $binary"; <br>
+            echo "Octal 0123 = $octal"; <br>
+            echo "Hexadecimal 0x1A = $hexadecimal"; <br>
+            echo "Max Integer: " . PHP_INT_MAX . ""; <br>
+            echo "Min Integer: " . PHP_INT_MIN;
+            <li>?></li>
+            <li> លទ្ទិផល. </li>
+            Age: 25 <br>
+            Binary 0b1010 = 10 <br>
+            Octal 0123 = 83 <br>
+            Hexadecimal 0x1A = 26 <br>
+            Max Integer: 9223372036854775807 <br>
+            Min Integer: -9223372036854775808 <br>
+        </ul>
+    </div>
+
+    <!-- RIGHT BOTTOM -->
+    <div class="right-bottom">
+        <h1> + Scalar Types. <br> (ប្រភេទទិន្នន័យមួលដ្ឋាន) </h1>
+        <p>
+        Scalar Types គឺជាប្រភេទទិន្នន័យដែលផ្ទុកតម្លៃតែមួយ
+        (single value)។ មាន ៤ ប្រភេទគឺ៖
+        </p>
+        <h1>1. Integer (ចំនួនគត់),</h1>
+        <P>
+            ប្រើសម្រាប់ផ្ទុកចំនួនគត់ (គ្មានខ្ទង់ទសភាគ)។
+        </P>
+    </div>
+
+    <!-- LEFT BOTTOM BOX 3-->
+    <div class="right-bottom">
+        <h1> 2. សេចក្តីផ្តើមអំពី <br> Data Types.</h1>
+        <p>
+            Data Types ឬ ប្រភេទទិន្នន័យ គឺជាការកំណត់ថាតើអថេរ
+            (Variable) មួយអាចផ្ទុកទិន្នន័យប្រភេទណាខ្លះ។ 
+            ក្នុងភាសា PHP យើងមិនចាំបាច់ប្រកាសប្រភេទអថេរទេ 
+            ព្រោះ PHP គឺជា Dynamic Typed Language ដែលមាន
+            ន័យថាប្រភេទទិន្នន័យនឹងត្រូវបានកំណត់ដោយស្វ័យប្រវត្តិ
+            តាមតម្លៃដែលផ្តល់ឲ្យ។
+        </p>
+    </div> 
+    
+    <!-- RIGHT TOP BOX -->
+    <div class="box blue">
+        <ul>
+            <li>PHP គាំទ្រប្រភេទទិន្នន័យចំនួន ៨ ប្រភេទ,</li>
+            <li>ប្រភេទទិន្នន័យត្រូវបានកំណត់ដោយស្វ័យប្រវត្តិ (Dynamic Typing),</li>
+            <li>អាចប្រើ function var_dump() ដើម្បីពិនិត្យប្រភេទ និងតម្លៃរបស់អថេរ,</li>
+        </ul>
+    </div>
+
+        <!-- LEFT BOTTOM BOX 4-->
+    <div class="box green">
+        <ul>
+            <li><.?php <br>// Boolean Types</li>
+            $isActive = true; <br>
+            $isLoggedIn = false; <br>
+            $hasPermission = 1; // 1 ត្រូវបានចាត់ទុកជា true <br>
+            $isEmpty = 0; // 0 ត្រូវបានចាត់ទុកជា false <br>
+
+            echo "Is Active: " . ($isActive ? 'Yes' : 'No') . "br"; <br>
+            echo "Is Logged In: " . ($isLoggedIn ? 'Yes' : 'No') . "br"; <br>
+            echo "Has Permission: " . ($hasPermission ? 'Yes' : 'No') . "br"; <br>
+            echo "Is Empty: " . ($isEmpty ? 'Yes' : 'No');?> <br>
+            <li>?></li>
+            <li> លទ្ទិផល. </li>
+            Is Active: Yes <br>
+            Is Logged In: No <br>
+            Has Permission: Yes <br>
+            Is Empty: No <br>
+        </ul>
+    </div>
+
+    <!-- RIGHT BOTTOM -->
+    <div class="right-bottom">
+        <h1> 3. Boolean. <br> (តម្លៃពិត/មិនពិត) </h1>
+        <p>
+        ប្រើសម្រាប់ផ្ទុកតម្លៃឡូជីខល៖ true ឬ false។
+        </p>
+    </div>
+    
+    <!-- LEFT BOTTOM BOX 5-->
+    <div class="right-bottom">
+        <h1> 4. String. <br> (អក្សរ/អត្ថបទ) </h1>
+        <p>
+            ប្រើសម្រាប់ផ្ទុកអត្ថបទ ឬតួអក្សរ។
+        </p>
+        <P><br>
+            +Noted គន្លឹះ៖ ការប្រើ double quotes អនុញ្ញាតឲ្យយើងបញ្ចូល
+            variable ដោយផ្ទាល់ក្នុង string ខណៈ single quotes មិនអាច។ 
+        </P>
+    </div> 
+    
+    <!-- RIGHT TOP BOX -->
+    <div class="box blue">
+        <ul>
+        <li><.?php <br>// String Types</li>
+            $singleQuote = 'Hello PHP'; // Single quotes <br>
+            $doubleQuote = "Hello PHP"; // Double quotes (អាចប្រើ variable) <br>
+            $name = "Samrech"; <br>
+            $greeting = "Welcome, $name!"; // Variable parsing <br>
+            $heredoc = EOT <br>
+            This is a heredoc string. <br>
+            It can contain multiple lines. <br>
+            Variables like $name are parsed. <br>
+            EOT; <br>
+
+            echo "Single Quote: $singleQuote.br"; <br>
+            echo "Double Quote: $doubleQuote.br"; <br>
+            echo "Greeting: $greeting.br"; <br>
+            echo "Heredoc: $heredoc"; <br>
+        <li>?></li>
+        <li> លទ្ទិផល. </li>
+            Single Quote: Hello PHP <br>
+            Double Quote: Hello PHP <br>
+            Greeting: Welcome, Samrech! <br>
+            Heredoc: This is a heredoc string. It can contain multiple lines. Variables like Samrech are parsed. <br> 
+        </ul>
+    </div>
+
+<!-- LEFT BOTTOM BOX 6-->
+    <div class="box green">
+        <ul>
+            <li><.?php <br>// Integer Types</li>
+            $age = 25; // Decimal (ទសភាគ) <br>
+            $binary = 0b1010; // Binary (គោលពីរ) = 10 <br>
+            $octal = 0123; // Octal (គោលប្រាំបី) = 83 <br>
+            $hexadecimal = 0x1A; // Hexadecimal (គោលដប់ប្រាំមួយ) = 26 <br>
+
+            echo "Age: $age"; <br>
+            echo "Binary 0b1010 = $binary"; <br>
+            echo "Octal 0123 = $octal"; <br>
+            echo "Hexadecimal 0x1A = $hexadecimal"; <br>
+            echo "Max Integer: " . PHP_INT_MAX . ""; <br>
+            echo "Min Integer: " . PHP_INT_MIN;
+            <li>?></li>
+            <li> លទ្ទិផល. </li>
+            Age: 25 <br>
+            Binary 0b1010 = 10 <br>
+            Octal 0123 = 83 <br>
+            Hexadecimal 0x1A = 26 <br>
+            Max Integer: 9223372036854775807 <br>
+            Min Integer: -9223372036854775808 <br>
+        </ul>
+    </div>
+
+<!-- RIGHT BOTTOM -->
+    <div class="right-bottom">
+        <h1> + Compound Types. <br> (ប្រភេទទិន្នន័យស្មុគស្មាញ) </h1>
+        <p>
+        Compound Types គឺជាប្រភេទទិន្នន័យដែលអាចផ្ទុកតម្លៃច្រើនក្នុងពេលតែមួយ។
+        </p>
+    </div>
+</section>
+
+</body>
+</html>

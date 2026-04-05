@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Result.</title>
+<link rel="stylesheet" href="../css_files/Tas.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Calculate Student Scores/គណនាពិន្ទុសិស្ស</h2>
+
+    <!-- 👉 បន្ថែមឈ្មោះ -->
+    <label>Student Name/ឈ្មោះសិស្ស</label>
+    <input type="text" id="name" placeholder="Input/បញ្ចូលឈ្មោះ">
+
+    <label>Attendance Scores (50%)</label>
+    <input type="number" id="midterm" max="30">
+
+    <label>Midterm Scores (50%)</label>
+    <input type="number" id="final" max="50">
+
+    <label>Final Scores (50%)</label>
+    <input type="number" id="attendance" max="20">
+
+    <button onclick="calculate()">Show Result/គណនា</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+
+function calculate() {
+    const name = document.getElementById('name').value;
+    const mid = parseFloat(document.getElementById('midterm').value);
+    const fin = parseFloat(document.getElementById('final').value);
+    const att = parseFloat(document.getElementById('attendance').value);
+    const resultBox = document.getElementById('result');
+
+    if (!name) {
+        resultBox.innerHTML = "<div class='result error'>សូមបញ្ចូលឈ្មោះ</div>";
+        return;
+    }
+
+    if (isNaN(mid) || isNaN(fin) , isNaN(att)) {
+        resultBox.innerHTML = "<div class='result error'>សូមបញ្ចូលពិន្ទុទាំងអស់</div>";
+        return;
+    }
+
+    if (mid > 100 || fin > 100 || att > 100) {
+        resultBox.innerHTML = "<div class='result error'>ពិន្ទុលើសកំណត់</div>";
+        return;
+    }
+
+    const total = mid + fin + att;
+
+   let grade = '';
+    if (total >= 60) grade = 'និស្សិតប្រឡងជាប់';
+    else if (total >= 50) grade = 'និស្សិតធត្រូវប្រឡងសងឡើងវិញ';
+    else if (total <= 50) grade = 'និសិស្សិតធត្រូវរៀនសងឡើងវិញ';
+    else grade = 'F';
+
+    resultBox.innerHTML = `
+        <div class="result">
+            <p><strong>ឈ្មោះ:</strong> ${name}</p>
+            <p><strong>Total:</strong> ${total}</p>
+            <p><strong>Grade:</strong> ${grade}</p>
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
